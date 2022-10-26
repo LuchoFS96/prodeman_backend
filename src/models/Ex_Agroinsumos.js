@@ -1,7 +1,7 @@
-const { DataTypes } = require("sequelize");
 const sequelize = require("../database");
+const { DataTypes } = require("sequelize");
 
-const Casa_Principal = sequelize.define("Casa_Principal", {
+const Ex_Agroinsumos = sequelize.define("Ex_Agroinsumos", {
   id: {
     type: DataTypes.UUID,
     allowNull: false,
@@ -48,21 +48,6 @@ const Casa_Principal = sequelize.define("Casa_Principal", {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  funcionamiento_telefono: {
-    type: DataTypes.BOOLEAN,
-    allowNull: false,
-  },
-  funcionamiento_telefono_observaciones: {
-    type: DataTypes.STRING,
-    allowNull: true,
-  },
-  ups: {
-    type: DataTypes.BOOLEAN,
-    allowNull: false,
-  },
-  ups_observaciones: {
-    type: DataTypes.STRING,
-    allowNull: true,
-  },
 });
-module.exports = Casa_Principal;
+
+module.exports = Ex_Agroinsumos;

@@ -1,8 +1,11 @@
 const express = require("express");
 const morgan = require("morgan");
+const router = require("./routes");
 
 const server = express();
 
+server.use(express.json());
+server.use(express.urlencoded());
 server.use(morgan("dev"));
 server.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
@@ -15,6 +18,6 @@ server.use((req, res, next) => {
   next();
 });
 
-// server.use('/', route)
+server.use("/", router);
 
 module.exports = server;
